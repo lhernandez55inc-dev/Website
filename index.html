@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luis Hernandez — Financial Guidance for Clients & Partners</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* === DARK & BOLD COLOR PALETTE === */
+:root{
+  --core-black:#0A0A0A; --iron-grey:#1A1A1A; --onyx:#2B2B2B; 
+  --steel-chrome:#A8B2B8; --white-head:#FFFFFF; --victory-gold:#D4AF37; 
+  --victory-glow:rgba(212,175,55,0.15);
+  /* Map to original vars */
+  --emerald:var(--core-black); --emerald-2:var(--iron-grey); --emerald-3:var(--onyx);
+  --porcelain:var(--iron-grey); --paper:var(--core-black); --paper-2:var(--iron-grey);
+  --ink:var(--white-head); --ink-soft:var(--steel-chrome); --stone:#6E7C73;
+  --brass:var(--victory-gold); --brass-2:var(--victory-gold); --brass-3:var(--victory-gold);
+  --line:var(--onyx); --line-dk:rgba(255,255,255,0.08);
+  --on-em-head:var(--white-head); --on-em-body:var(--steel-chrome); --on-em-mute:var(--steel-chrome);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{background:var(--core-black);color:var(--steel-chrome);font-family:'Hanken Grotesk',sans-serif;font-weight:400;line-height:1.6;overflow-x:hidden;}
+::selection{background:var(--victory-gold);color:#000;}
+a{color:inherit;}
+img{display:block;max-width:100%;}
+.mono{font-family:'Spline Sans Mono',monospace;}
+.serif{font-family:'Fraunces',serif;}
+
+/* Eyebrow */
+.eyebrow{font-family:'Spline Sans Mono',monospace;font-size:.7rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--victory-gold);display:inline-flex;align-items:center;gap:11px;}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--victory-gold);display:inline-block;opacity:.8;}
+
+/* Icons */
+.icon{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;display:block;}
+
+/* Layout */
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+.sec{padding:clamp(72px,11vw,140px) 0;}
+.divider-line{height:1px;background:var(--onyx);border:none;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:300;background:rgba(10,10,10,0.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--onyx);}
+.nav-in{max-width:1180px;margin:0 auto;padding:17px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.brand{display:flex;flex-direction:column;line-height:1;text-decoration:none;}
+.brand b{font-family:'Fraunces',serif;font-weight:600;font-size:1.18rem;letter-spacing:.01em;color:var(--white-head);}
+.brand small{font-family:'Spline Sans Mono',monospace;font-size:.56rem;letter-spacing:.34em;text-transform:uppercase;color:var(--steel-chrome);margin-top:5px;}
+.nav-links{display:flex;align-items:center;gap:30px;list-style:none;}
+.nav-links a{font-size:.82rem;font-weight:500;letter-spacing:.02em;color:var(--steel-chrome);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--victory-gold);}
+.nav-btn{font-family:'Hanken Grotesk';background:var(--victory-gold);color:#0A0A0A!important;padding:11px 22px;border-radius:2px;font-size:.82rem;font-weight:700;letter-spacing:.02em;text-decoration:none;white-space:nowrap;box-shadow:0 4px 15px var(--victory-glow);transition:transform .2s,box-shadow .3s;}
+.nav-btn:hover{transform:scale(1.05);box-shadow:0 8px 25px var(--victory-glow);}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Hanken Grotesk';font-size:.92rem;font-weight:700;letter-spacing:.01em;padding:15px 30px;border-radius:2px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:all .22s,transform .15s;}
+.btn .icon{width:17px;height:17px;}
+.btn-brass{background:var(--victory-gold);color:#0A0A0A;box-shadow:0 4px 15px var(--victory-glow);}
+.btn-brass:hover{background:#C5A028;transform:scale(1.05);box-shadow:0 8px 25px var(--victory-glow);}
+.btn-ghost-em{background:transparent;color:var(--victory-gold);border:1px solid var(--victory-gold);}
+.btn-ghost-em:hover{background:var(--victory-gold);color:#0A0A0A;}
+.btn-ghost{background:transparent;color:var(--white-head);border:1px solid var(--onyx);}
+.btn-ghost:hover{border-color:var(--victory-gold);color:var(--victory-gold);}
+
+/* HERO */
+.hero{background:var(--core-black);color:var(--steel-chrome);position:relative;overflow:hidden;}
+.hero-grid-tex{position:absolute;inset:0;opacity:0.05;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:84px 84px;}
+.hero-in{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:clamp(90px,15vw,160px) 32px clamp(70px,10vw,120px);}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.9rem,7.2vw,6.4rem);line-height:1.01;letter-spacing:-.018em;color:var(--white-head);max-width:16ch;}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--victory-gold);}
+.hero-rule{height:1px;background:linear-gradient(90deg,var(--victory-gold),transparent);margin:38px 0 30px;transform-origin:left;}
+.hero-sub{font-size:clamp(1.04rem,1.7vw,1.24rem);font-weight:400;line-height:1.66;color:var(--steel-chrome);max-width:54ch;}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:42px;}
+.hero-meta{display:flex;flex-wrap:wrap;gap:30px 46px;margin-top:64px;padding-top:30px;border-top:1px solid var(--onyx);}
+.hero-meta div{display:flex;flex-direction:column;gap:7px;}
+.hero-meta .k{font-family:'Spline Sans Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--steel-chrome);}
+.hero-meta .v{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--white-head);font-weight:500;}
+
+/* ABOUT */
+.about{background:var(--iron-grey);} 
+.pullquote{border-left:2px solid var(--victory-gold);padding:6px 0 6px 30px;}
+.pullquote q{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.32;color:var(--white-head);quotes:none;}
+.pullquote q::before,.pullquote q::after{content:"";}
+.pullquote cite{display:block;margin-top:22px;font-family:'Spline Sans Mono',monospace;font-style:normal;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--victory-gold);}
+.about-body p{font-size:1.07rem;line-height:1.78;color:var(--steel-chrome);} 
+.about-body strong{color:var(--white-head);font-weight:600;}
+
+/* IMAGE STORY */
+.image-story{background:var(--core-black);border-top:1px solid var(--onyx);} 
+.image-story-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:start;} 
+.image-card{background:var(--iron-grey);border:1px solid var(--onyx);overflow:hidden;position:relative;} 
+.image-card img{width:100%;height:100%;object-fit:cover;display:block;} 
+.image-card-large{display:grid;grid-template-rows:1fr auto;} 
+.image-card-large img{min-height:420px;} 
+.image-caption{padding:20px 22px 24px;} 
+.image-caption h3{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--white-head);margin-bottom:8px;} 
+.image-caption p{font-size:.95rem;line-height:1.6;color:var(--steel-chrome);} 
+.image-stack{display:grid;grid-template-columns:1fr 1fr;gap:14px;} 
+.image-stack .image-card:nth-child(1){grid-column:1 / span 2;} 
+.image-stack .image-card:nth-child(1) img{min-height:220px;} 
+.image-stack .image-card:nth-child(2) img,.image-stack .image-card:nth-child(3) img{min-height:180px;} 
+
+/* STATS */
+.stats{background:var(--core-black);border-top:1px solid var(--onyx);border-bottom:1px solid var(--onyx);} 
+.stat .num{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.8rem,6vw,4.6rem);line-height:1;color:var(--white-head);letter-spacing:-.02em;}
+.stat .num em{font-style:italic;color:var(--victory-gold);} 
+.stat .lbl{font-family:'Spline Sans Mono',monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--steel-chrome);} 
+
+/* PRODUCTS */
+.products{background:var(--core-black);} 
+.pcard{background:var(--iron-grey);padding:42px 36px;position:relative;transition:background .25s;border:1px solid var(--onyx);} 
+.pcard:hover{background:var(--onyx);border-color:var(--victory-gold);} 
+.pcard .ic{color:var(--victory-gold);margin-bottom:22px;} 
+.pcard h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.28rem;color:var(--white-head);} 
+.pcard p{font-size:.95rem;line-height:1.62;color:var(--steel-chrome);} 
+
+/* WHY */
+.why{background:var(--iron-grey);} 
+.why-item{border-top:1px solid var(--onyx);} 
+.why-item .mk{font-family:'Spline Sans Mono',monospace;font-size:.72rem;color:var(--victory-gold);} 
+.why-item h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.32rem;color:var(--white-head);} 
+.why-item p{font-size:.98rem;line-height:1.66;color:var(--steel-chrome);} 
+
+/* LUIS - Bold & Gold */
+.luis{background:var(--core-black);} 
+.luis-photo .frame{position:relative;border:1px solid var(--victory-gold);padding:6px;} 
+.luis-photo img{width:100%;border-radius:2px;} 
+.luis-photo .corner{display:none;} 
+.luis-name{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.4rem,5vw,3.7rem);line-height:1;color:var(--white-head);letter-spacing:-.015em;margin-bottom:22px;} 
+.luis-name em{font-style:italic;color:var(--victory-gold);} 
+.luis-bio{font-size:1.05rem;line-height:1.74;color:var(--steel-chrome);} 
+.lc{display:flex;align-items:center;gap:16px;padding:15px 0;border-bottom:1px solid var(--onyx);color:var(--steel-chrome);text-decoration:none;transition:color .2s,padding .2s;} 
+.lc:hover{color:var(--victory-gold);padding-left:6px;} 
+.lc .icon{color:var(--victory-gold);} 
+
+/* CONNECT */
+.connect{background:var(--iron-grey);} 
+.ccard{background:var(--core-black);padding:22px 24px;text-decoration:none;color:var(--steel-chrome);display:flex;flex-direction:column;gap:10px;transition:background .25s,border-color .25s;border:1px solid var(--onyx);min-height:170px;} 
+.ccard:hover{background:var(--onyx);border-color:var(--victory-gold);} 
+.ccard .ic{color:var(--victory-gold);} 
+.ccard .lbl{font-family:'Spline Sans Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--victory-gold);} 
+.ccard h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.2rem;color:var(--white-head);} 
+.ccard p{font-size:.9rem;line-height:1.5;color:var(--steel-chrome);} 
+.ccard .go{margin-top:auto;font-family:'Spline Sans Mono',monospace;font-size:.72rem;letter-spacing:.06em;color:var(--victory-gold);} 
+.ccard.feature{background:var(--core-black);border:1px solid var(--victory-gold);color:var(--white-head);} 
+.ccard.feature:hover{background:var(--iron-grey);border-color:var(--victory-gold);} 
+.ccard.feature h3{color:var(--white-head);font-size:1.3rem;} 
+
+/* QUOTE TOOL */
+.quote{background:var(--core-black);border-top:1px solid var(--onyx);} 
+.quote-card{background:var(--iron-grey);border:1px solid var(--onyx);padding:32px;display:flex;flex-direction:column;gap:18px;} 
+.quote-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;} 
+.quote-form{display:flex;flex-direction:column;gap:16px;} 
+.quote-row{display:flex;flex-direction:column;gap:8px;} 
+.quote-row label{font-family:'Spline Sans Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--steel-chrome);} 
+.quote-row .value{display:flex;justify-content:space-between;align-items:center;font-size:.92rem;color:var(--white-head);} 
+.quote-row input[type="range"]{width:100%;accent-color:var(--victory-gold);} 
+.quote-row select{background:var(--core-black);color:var(--white-head);border:1px solid var(--onyx);padding:12px 14px;font:inherit;} 
+.quote-result{background:var(--core-black);border:1px solid var(--onyx);padding:18px;display:flex;flex-direction:column;gap:8px;} 
+.quote-result .k{font-family:'Spline Sans Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--steel-chrome);} 
+.quote-result .num{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--white-head);} 
+.quote-disclaimer{margin-top:20px;font-size:.95rem;line-height:1.65;color:var(--steel-chrome);max-width:80ch;} 
+.quote-cta{margin-top:16px;display:flex;flex-wrap:wrap;gap:12px;} 
+
+/* FOOTER */
+footer{background:var(--core-black);border-top:2px solid var(--victory-gold);} 
+.foot-brand b{font-family:'Fraunces',serif;font-weight:600;font-size:1.5rem;color:var(--white-head);} 
+.foot-brand small{font-family:'Spline Sans Mono',monospace;font-size:.58rem;letter-spacing:.32em;text-transform:uppercase;color:var(--steel-chrome);} 
+.foot-col h4{font-family:'Spline Sans Mono',monospace;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--steel-chrome);} 
+.foot-col a{font-size:.9rem;color:var(--steel-chrome);text-decoration:none;padding:6px 0;transition:color .2s;} 
+.foot-col a:hover{color:var(--victory-gold);} 
+.foot-col .icon{color:var(--victory-gold);} 
+.foot-bottom{font-family:'Spline Sans Mono',monospace;font-size:.66rem;letter-spacing:.08em;color:var(--steel-chrome);} 
+.foot-disc{color:rgba(168,178,184,0.4);} 
+
+/* ARRANGEMENT */
+.shead h2{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3.3vw,2.6rem);line-height:1.12;color:var(--white-head);margin-top:14px;max-width:13ch;}
+.shead h2 em{font-style:italic;color:var(--victory-gold);} 
+.shead p{margin-top:18px;max-width:62ch;font-size:1rem;line-height:1.7;color:var(--steel-chrome);} 
+.about-grid,.why-grid,.luis-grid,.cgrid,.foot-top{display:grid;gap:34px;}
+.about-grid{grid-template-columns:1.15fr .85fr;align-items:start;}
+.stats-in{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:1180px;margin:0 auto;padding:36px 32px;}
+.stat{padding:18px 0;display:flex;flex-direction:column;gap:10px;}
+.pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
+.why-grid{grid-template-columns:0.95fr 1.05fr;align-items:start;}
+.luis-grid{grid-template-columns:0.9fr 1.1fr;align-items:center;gap:56px;}
+.cgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;}
+.foot-in{max-width:1180px;margin:0 auto;padding:36px 32px 42px;}
+.foot-top{grid-template-columns:1.1fr .6fr .6fr;align-items:start;gap:28px;}
+.foot-bottom{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:20px;margin-top:26px;border-top:1px solid var(--onyx);} 
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
+.rv.in{opacity:1;transform:translateY(0);} 
+
+/* RESPONSIVE */
+@media(max-width:980px){ .nav-links li.lk{display:none;} .about-grid{grid-template-columns:1fr;} .pgrid{grid-template-columns:1fr 1fr;} .why-grid{grid-template-columns:1fr;} .luis-grid{grid-template-columns:1fr;} .luis-photo{max-width:380px;} .cgrid{grid-template-columns:1fr 1fr;} .quote-grid{grid-template-columns:1fr;} .foot-top{grid-template-columns:1fr 1fr;} .foot-brand{grid-column:span 2;}} 
+@media(max-width:600px){ .wrap,.nav-in,.hero-in,.foot-in{padding-left:22px;padding-right:22px;} .nav-btn{padding:11px 15px;font-size:.76rem;} .stats-in{grid-template-columns:1fr;padding-left:22px;padding-right:22px;} .stat{border-left:none;border-top:1px solid var(--onyx);} .pgrid{grid-template-columns:1fr;} .cgrid{grid-template-columns:1fr;} .quote-card{padding:24px;} .foot-top{grid-template-columns:1fr;} .foot-brand{grid-column:span 1;} .foot-bottom{flex-direction:column;}} 
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top">
+      <b>Experior Financial Group</b>
+      <small>San Antonio · Texas</small>
+    </a>
+    <ul class="nav-links">
+      <li class="lk"><a href="#about">The Firm</a></li>
+      <li class="lk"><a href="#products">Solutions</a></li>
+      <li class="lk"><a href="#why">The Partnership</a></li>
+      <li class="lk"><a href="#luis">Luis</a></li>
+      <li><a class="nav-btn" href="https://calendly.com/lhernandez55-inc/welcome-to-experior" target="_blank" rel="noopener">Book a Call</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero on-em" id="top">
+  <div class="hero-grid-tex"></div>
+  <div class="hero-in">
+    <span class="eyebrow intro d1">Experior Financial Group — Est. North America</span>
+    <h1 class="intro d2">Protect what matters most for your <em>family and business</em>.</h1>
+    <div class="hero-rule intro"></div>
+    <p class="hero-sub intro d3">For clients and referral partners seeking thoughtful financial guidance, practical protection, and a steady hand through life’s big decisions.</p>
+    <div class="hero-cta intro d4">
+      <a class="btn btn-brass" href="https://calendly.com/lhernandez55-inc/welcome-to-experior" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+        Book a consultation
+      </a>
+      <a class="btn btn-ghost-em" href="#why">Why clients choose Luis</a>
+    </div>
+    <div class="hero-meta intro d5">
+      <div><span class="k">Headquarters</span><span class="v">San Antonio, TX</span></div>
+      <div><span class="k">Focus</span><span class="v">Families, business owners, and referral partners</span></div>
+      <div><span class="k">Approach</span><span class="v">Service-first, practical, and personal</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="sec about" id="about">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="eyebrow">The Firm</span>
+      <h2>Building financial foundations <em>for every family.</em></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-body rv">
+        <p>Experior Financial Group is a North American financial services organization built on a single principle — <strong>help families and business owners protect what they’ve built and prepare for what’s ahead.</strong></p>
+        <p>I work with clients who want thoughtful guidance around life insurance, income protection, debt strategy, retirement planning, and legacy planning. I also collaborate with referral partners who value a trusted, service-first approach.</p>
+        <p>For clients and business partners, that means clear recommendations, careful follow-through, and a steady advisor who is easy to reach when it matters most.</p>
+      </div>
+      <div class="pullquote rv">
+        <q>We don't just sell policies. We change the financial trajectory of families — and of the agents who serve them.</q>
+        <cite>Luis Hernandez · Experior Financial Group</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats on-em">
+  <div class="stats-in">
+    <div class="stat rv"><div class="num">10<em>+</em></div><div class="lbl">Years Helping Clients</div></div>
+    <div class="stat rv"><div class="num">1:1</div><div class="lbl">Personal Guidance</div></div>
+    <div class="stat rv"><div class="num">Local</div><div class="lbl">San Antonio Support</div></div>
+  </div>
+</section>
+
+<section class="sec products" id="products">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="eyebrow">Solutions</span>
+      <h2>Practical options for <em>families and business owners.</em></h2>
+      <p>From protection and savings to legacy planning, I help clients connect the right solutions to the right goals.</p>
+    </div>
+    <div class="pgrid">
+      <div class="pcard rv"><div class="ic"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-3 7.7-7 9-4-1.3-7-4.4-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Life Insurance</h3><p>Term, whole life, and indexed universal life — coverage that protects what families build and leaves a legacy behind.</p></div>
+      <div class="pcard rv"><div class="ic"><svg class="icon" viewBox="0 0 24 24"><path d="M3 7l6 6 4-4 8 8"/><path d="M21 17v-5h-5"/></svg></div><h3>Debt Elimination</h3><p>Help clients get out of debt years faster — saving thousands in interest and freeing income for what matters.</p></div>
+      <div class="pcard rv"><div class="ic"><svg class="icon" viewBox="0 0 24 24"><path d="M4 20V10M10 20V5M16 20v-8M22 20H2"/></svg></div><h3>Savings &amp; Retirement</h3><p>Personalized plans for retirement, education, and future goals — meeting each family exactly where they are.</p></div>
+      <div class="pcard rv"><div class="ic"><svg class="icon" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div><h3>Mortgage Protection</h3><p>Protect the largest investment most families make. Keep the home in the family — no matter what happens.</p></div>
+      <div class="pcard rv"><div class="ic"><svg class="icon" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div><h3>Financial Needs Analysis</h3><p>A no-obligation review that maps exactly what each client needs — and nothing they don't.</p></div>
+      <div class="pcard rv"><div class="ic"><svg class="icon" viewBox="0 0 24 24"><path d="M3 21V8l7-4 7 4M21 21V11l-4-2.3"/><path d="M3 21h18M8 21v-5h4v5"/></svg></div><h3>Agency Building</h3><p>Build your own agency. Commission-based, no ceiling. Write policies or lead a team — there's a path for both.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec quote" id="quote">
+  <div class="wrap">
+    <div class="shead rv">
+      <span class="eyebrow">Free Quote Tool</span>
+      <h2>Estimate life insurance options in <em>under a minute.</em></h2>
+      <p>Use the sliders below for a quick estimate on term coverage or final expense coverage. These are illustrative estimates based on national averages and are not a binding quote.</p>
+    </div>
+    <div class="quote-grid">
+      <div class="quote-card rv">
+        <h3 style="font-family:'Fraunces',serif;font-size:1.35rem;color:var(--white-head);">Term Life Estimate</h3>
+        <form class="quote-form" id="term-form">
+          <div class="quote-row">
+            <label for="termAge">Age</label>
+            <input id="termAge" type="range" min="18" max="80" value="45">
+            <div class="value"><span>Current age</span><strong id="termAgeValue">45</strong></div>
+          </div>
+          <div class="quote-row">
+            <label for="termGender">Gender</label>
+            <select id="termGender">
+              <option value="female">Female</option>
+              <option value="male" selected>Male</option>
+            </select>
+          </div>
+          <div class="quote-row">
+            <label for="termTobacco">Tobacco use</label>
+            <select id="termTobacco">
+              <option value="no" selected>No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </div>
+          <div class="quote-row">
+            <label for="termCoverage">Coverage amount</label>
+            <input id="termCoverage" type="range" min="100000" max="1000000" step="50000" value="250000">
+            <div class="value"><span>Coverage</span><strong id="termCoverageValue">$250,000</strong></div>
+          </div>
+          <div class="quote-row">
+            <label for="termLength">Term length</label>
+            <input id="termLength" type="range" min="10" max="30" step="10" value="20">
+            <div class="value"><span>Length</span><strong id="termLengthValue">20 years</strong></div>
+          </div>
+          <button class="btn btn-brass" type="submit">Estimate term quote</button>
+        </form>
+        <div class="quote-result">
+          <span class="k">Estimated monthly premium</span>
+          <span class="num" id="termResult">$21/mo</span>
+        </div>
+      </div>
+      <div class="quote-card rv">
+        <h3 style="font-family:'Fraunces',serif;font-size:1.35rem;color:var(--white-head);">Final Expense Estimate</h3>
+        <form class="quote-form" id="final-form">
+          <div class="quote-row">
+            <label for="finalAge">Age</label>
+            <input id="finalAge" type="range" min="50" max="85" value="68">
+            <div class="value"><span>Current age</span><strong id="finalAgeValue">68</strong></div>
+          </div>
+          <div class="quote-row">
+            <label for="finalGender">Gender</label>
+            <select id="finalGender">
+              <option value="female">Female</option>
+              <option value="male" selected>Male</option>
+            </select>
+          </div>
+          <div class="quote-row">
+            <label for="finalTobacco">Tobacco use</label>
+            <select id="finalTobacco">
+              <option value="no" selected>No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </div>
+          <div class="quote-row">
+            <label for="finalCoverage">Coverage amount</label>
+            <input id="finalCoverage" type="range" min="5000" max="50000" step="5000" value="15000">
+            <div class="value"><span>Coverage</span><strong id="finalCoverageValue">$15,000</strong></div>
+          </div>
+          <button class="btn btn-brass" type="submit">Estimate final expense</button>
+        </form>
+        <div class="quote-result">
+          <span class="k">Estimated monthly premium</span>
+          <span class="num" id="finalResult">$26/mo</span>
+        </div>
+      </div>
+    </div>
+    <p class="quote-disclaimer">These quotes are illustrative estimates based on simplified national averages and broad underwriting assumptions. Actual pricing depends on age, health, tobacco use, state availability, carrier underwriting, and the final application review. For a proper quote and a complete recommendation, book a consultation.</p>
+    <div class="quote-cta">
+      <a class="btn btn-brass" href="https://calendly.com/lhernandez55-inc/welcome-to-experior" target="_blank" rel="noopener">Book a call</a>
+      <a class="btn btn-ghost-em" href="#connect">Contact Luis</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec why" id="why">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="why-left rv">
+        <div class="shead"><span class="eyebrow">Why Clients Choose Luis</span><h2>Thoughtful guidance for <em>people and partnerships.</em></h2><p>Clients and referral partners choose Luis for clear direction, personal service, and a steady approach to planning.</p></div>
+        <span class="num-big" style="font-family:'Fraunces';font-style:italic;color:var(--victory-gold);margin-top:26px;display:block;">Six reasons it feels different.</span>
+      </div>
+      <div class="why-list">
+        <div class="why-item rv"><span class="mk">/01</span><div><h3>Clear planning</h3><p>I take the time to explain options in plain language so clients can make confident decisions.</p></div></div>
+        <div class="why-item rv"><span class="mk">/02</span><div><h3>Client-first conversations</h3><p>Every conversation starts with the client’s goals, values, and concerns — not pressure or scripts.</p></div></div>
+        <div class="why-item rv"><span class="mk">/03</span><div><h3>Business owner support</h3><p>From protection to succession planning, I help business owners think beyond the immediate transaction.</p></div></div>
+        <div class="why-item rv"><span class="mk">/04</span><div><h3>Referral partner collaboration</h3><p>I value strong relationships with professionals who want a dependable partner to help their clients.</p></div></div>
+        <div class="why-item rv"><span class="mk">/05</span><div><h3>Responsive follow-through</h3><p>Clients know they can reach out when questions come up, and they receive thoughtful follow-up.</p></div></div>
+        <div class="why-item rv"><span class="mk">/06</span><div><h3>Long-term relationships</h3><p>My work is designed to support clients over time — not just at the point of sale.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec luis on-em" id="luis">
+  <div class="wrap">
+    <div class="luis-grid">
+      <div class="rv">
+        <div class="image-story-grid" style="grid-template-columns:1fr 1fr;gap:14px;align-items:start;">
+          <div class="image-card image-card-large">
+            <img src="B0A1A421-CE8E-4565-BF6C-7AF8B5351BFF.jpeg" alt="Luis Hernandez, Experior Financial Group">
+          </div>
+          <div class="image-stack" style="display:grid;gap:14px;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;">
+            <div class="image-card" style="grid-column:1 / span 2; min-height:220px;">
+              <img src="9113F56E-5A73-4B76-918B-FF284E8E6E3A_1_105_c.jpeg" alt="Client-focused conversation">
+            </div>
+            <div class="image-card" style="min-height:180px;">
+              <img src="B0B9CCC1-5B5B-41E2-BEBB-600C7CED3D8E_1_105_c.jpeg" alt="A polished professional setting">
+            </div>
+            <div class="image-card" style="min-height:180px;">
+              <img src="73B178F2-BF9B-4DB4-940F-FDE9E2771477_1_102_o.jpeg" alt="A calm professional moment">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rv">
+        <span class="eyebrow">Your Partner</span>
+        <h2 class="luis-name" style="margin-top:22px;">Luis <em>Hernandez.</em></h2>
+        <p class="luis-bio">I’m a licensed financial professional with Experior Financial Group, based in San Antonio, Texas. I work with clients and referral partners who want practical guidance, thoughtful planning, and a steady point of contact.</p>
+        <p class="luis-bio">Whether you’re evaluating protection for your family, planning for a business transition, or looking for a trusted partner to collaborate with, I’d be glad to connect.</p>
+        <div class="luis-contacts">
+          <a class="lc" href="https://docs.google.com/forms/d/e/1FAIpQLSdfvr2W4Eg33lyhfXd9vJL7_Bm6iysYSS-93VV3ZzYoHyNUog/viewform" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/></svg><span>Join the team</span><span class="arr" style="margin-left:auto;font-family:'Spline Sans Mono',monospace;font-size:.8rem;opacity:.5;">↗</span></a>
+          <a class="lc" href="https://www.instagram.com/luis_hernandezsatx" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>Follow on Instagram</span><span class="arr" style="margin-left:auto;font-family:'Spline Sans Mono',monospace;font-size:.8rem;opacity:.5;">↗</span></a>
+          <a class="lc" href="tel:2104395309" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><path d="M5 5h4l2 4-2 2a15 15 0 006 6l2-2 4 2v4a2 2 0 01-2 2h-1C8 21 3 16 3 9V8a2 2 0 012-2h1z"/></svg><span>210-439-5309</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-top">
+      <div class="foot-brand"><b>Experior Financial Group</b><small>San Antonio · Texas</small><p>Building financial foundations for families to empower them today and leave a legacy for tomorrow.</p></div>
+      <div class="foot-col"><h4>Explore</h4><a href="#about">The Firm</a><a href="#products">Solutions</a><a href="#why">Why Luis</a><a href="#luis">Meet Luis</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Experior Financial Group Inc. · All Rights Reserved</span><span>San Antonio, TX · Luis Hernandez</span></div>
+    <p class="foot-disc">As with any business opportunity, individual results vary based on effort, experience, and market conditions. There are no guarantees of income. All insurance products are subject to state licensing requirements. Experior Financial Group Inc.</p>
+  </div>
+</footer>
+
+<script>
+  const formatCurrency=(value)=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(value);
+  const updateDisplay=(input, target)=>{target.textContent=input.type==='range'?input.id.includes('Coverage')?formatCurrency(Number(input.value)):input.value + (input.id.includes('Length')?' years': ''):input.value;};
+  const estimateTerm=(age, gender, tobacco, coverage, termLength)=>{
+    let rate=age<30?0.055:age<40?0.065:age<50?0.085:age<60?0.115:0.145;
+    if(gender==='male') rate*=1.08;
+    if(tobacco==='yes') rate*=1.55;
+    if(termLength===30) rate*=1.08;
+    if(termLength===10) rate*=0.92;
+    return (coverage/1000)*rate;
+  };
+  const estimateFinal=(age, gender, tobacco, coverage)=>{
+    let rate=age<60?1.45:age<70?1.85:age<80?2.35:2.95;
+    if(gender==='male') rate*=1.05;
+    if(tobacco==='yes') rate*=1.2;
+    return (coverage/1000)*rate;
+  };
+
+  window.addEventListener('load',()=>{
+    document.body.classList.add('loaded');
+    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+    const termAge=document.getElementById('termAge');
+    const termAgeValue=document.getElementById('termAgeValue');
+    const termCoverage=document.getElementById('termCoverage');
+    const termCoverageValue=document.getElementById('termCoverageValue');
+    const termLength=document.getElementById('termLength');
+    const termLengthValue=document.getElementById('termLengthValue');
+    const termResult=document.getElementById('termResult');
+    const termForm=document.getElementById('term-form');
+    const finalAge=document.getElementById('finalAge');
+    const finalAgeValue=document.getElementById('finalAgeValue');
+    const finalCoverage=document.getElementById('finalCoverage');
+    const finalCoverageValue=document.getElementById('finalCoverageValue');
+    const finalResult=document.getElementById('finalResult');
+    const finalForm=document.getElementById('final-form');
+
+    [termAge,termCoverage,termLength].forEach(input=>input.addEventListener('input',()=>{
+      if(input===termAge) termAgeValue.textContent=input.value;
+      if(input===termCoverage) termCoverageValue.textContent=formatCurrency(Number(input.value));
+      if(input===termLength) termLengthValue.textContent=input.value+' years';
+    }));
+    [finalAge,finalCoverage].forEach(input=>input.addEventListener('input',()=>{
+      if(input===finalAge) finalAgeValue.textContent=input.value;
+      if(input===finalCoverage) finalCoverageValue.textContent=formatCurrency(Number(input.value));
+    }));
+
+    termForm.addEventListener('submit',(event)=>{
+      event.preventDefault();
+      const monthly=estimateTerm(Number(termAge.value), document.getElementById('termGender').value, document.getElementById('termTobacco').value, Number(termCoverage.value), Number(termLength.value));
+      termResult.textContent=formatCurrency(monthly)+'/mo';
+    });
+    finalForm.addEventListener('submit',(event)=>{
+      event.preventDefault();
+      const monthly=estimateFinal(Number(finalAge.value), document.getElementById('finalGender').value, document.getElementById('finalTobacco').value, Number(finalCoverage.value));
+      finalResult.textContent=formatCurrency(monthly)+'/mo';
+    });
+
+    termForm.dispatchEvent(new Event('submit'));
+    finalForm.dispatchEvent(new Event('submit'));
+  });
+</script>
+</body>
+</html>
