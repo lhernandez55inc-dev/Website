@@ -91,17 +91,15 @@ img{display:block;max-width:100%;}
 .image-story{background:var(--core-black);border-top:1px solid var(--onyx);} 
 .image-story-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:start;} 
 .image-card{background:var(--iron-grey);border:1px solid var(--onyx);overflow:hidden;position:relative;} 
-.image-card img{width:100%;height:100%;object-fit:cover;display:block;} 
-.image-card-large{display:grid;grid-template-rows:1fr auto;} 
-.image-card-large img{min-height:420px;} 
+.image-card img{width:100%;height:auto;display:block;} 
+.image-card.crop{min-height:260px;overflow:hidden;}
+.image-card.crop img{width:100%;height:100%;object-fit:cover;} 
+.image-card-large{display:grid;} 
+.image-stack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;} 
+.image-stack .image-card{min-height:0;} 
 .image-caption{padding:20px 22px 24px;} 
 .image-caption h3{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--white-head);margin-bottom:8px;} 
-.image-caption p{font-size:.95rem;line-height:1.6;color:var(--steel-chrome);} 
-.image-stack{display:grid;grid-template-columns:1fr 1fr;gap:14px;} 
-.image-stack .image-card:nth-child(1){grid-column:1 / span 2;} 
-.image-stack .image-card:nth-child(1) img{min-height:220px;} 
-.image-stack .image-card:nth-child(2) img,.image-stack .image-card:nth-child(3) img{min-height:180px;} 
-
+.image-caption p{font-size:.95rem;line-height:1.6;color:var(--steel-chrome);}
 /* STATS */
 .stats{background:var(--core-black);border-top:1px solid var(--onyx);border-bottom:1px solid var(--onyx);} 
 .stat .num{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.8rem,6vw,4.6rem);line-height:1;color:var(--white-head);letter-spacing:-.02em;}
@@ -150,19 +148,34 @@ img{display:block;max-width:100%;}
 
 /* QUOTE TOOL */
 .quote{background:var(--core-black);border-top:1px solid var(--onyx);} 
-.quote-card{background:var(--iron-grey);border:1px solid var(--onyx);padding:32px;display:flex;flex-direction:column;gap:18px;} 
-.quote-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;} 
-.quote-form{display:flex;flex-direction:column;gap:16px;} 
-.quote-row{display:flex;flex-direction:column;gap:8px;} 
-.quote-row label{font-family:'Spline Sans Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--steel-chrome);} 
-.quote-row .value{display:flex;justify-content:space-between;align-items:center;font-size:.92rem;color:var(--white-head);} 
-.quote-row input[type="range"]{width:100%;accent-color:var(--victory-gold);} 
-.quote-row select{background:var(--core-black);color:var(--white-head);border:1px solid var(--onyx);padding:12px 14px;font:inherit;} 
-.quote-result{background:var(--core-black);border:1px solid var(--onyx);padding:18px;display:flex;flex-direction:column;gap:8px;} 
+.quote-tool{background:var(--iron-grey);border:1px solid var(--onyx);padding:32px;display:flex;flex-direction:column;gap:28px;} 
+.quote-tabs{display:flex;gap:12px;flex-wrap:wrap;} 
+.quote-tabs .tab{border:1px solid var(--onyx);background:transparent;color:var(--steel-chrome);padding:12px 18px;border-radius:2px;cursor:pointer;transition:all .2s;} 
+.quote-tabs .tab.active{background:var(--victory-gold);color:#0A0A0A;border-color:var(--victory-gold);} 
+.quote-form{display:flex;flex-direction:column;gap:22px;} 
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;} 
+.form-group{display:flex;flex-direction:column;gap:10px;} 
+.form-group label{font-family:'Spline Sans Mono',monospace;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--steel-chrome);} 
+.form-group input,
+.form-group select{background:var(--core-black);color:var(--white-head);border:1px solid var(--onyx);padding:14px 16px;font:inherit;border-radius:2px;} 
+.form-span-2{grid-column:span 2;} 
+.quote-actions{display:flex;flex-wrap:wrap;gap:12px;} 
+.quote-result-panel{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;} 
+.quote-result{background:var(--core-black);border:1px solid var(--onyx);padding:24px;display:flex;flex-direction:column;gap:10px;} 
 .quote-result .k{font-family:'Spline Sans Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--steel-chrome);} 
-.quote-result .num{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--white-head);} 
-.quote-disclaimer{margin-top:20px;font-size:.95rem;line-height:1.65;color:var(--steel-chrome);max-width:80ch;} 
-.quote-cta{margin-top:16px;display:flex;flex-wrap:wrap;gap:12px;} 
+.quote-result .num{font-family:'Fraunces',serif;font-size:2rem;color:var(--white-head);} 
+.quote-summary{display:flex;flex-direction:column;gap:8px;font-size:.95rem;color:var(--steel-chrome);} 
+.quote-summary span{display:block;} 
+.leads-panel{background:var(--core-black);border:1px solid var(--onyx);padding:22px;display:flex;flex-direction:column;gap:18px;} 
+.leads-header{display:flex;align-items:center;justify-content:space-between;gap:12px;} 
+.leads-header h3{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--white-head);} 
+.leads-scroll{overflow-x:auto;} 
+.leads-table{width:100%;border-collapse:collapse;font-size:.95rem;color:var(--steel-chrome);} 
+.leads-table th,
+.leads-table td{padding:12px 10px;text-align:left;border-bottom:1px solid var(--onyx);} 
+.leads-table th{font-family:'Spline Sans Mono',monospace;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--victory-gold);} 
+.leads-panel[hidden]{display:none;} 
+.quote-disclaimer{margin-top:0;font-size:.95rem;line-height:1.65;color:var(--steel-chrome);max-width:80ch;} 
 
 /* FOOTER */
 footer{background:var(--core-black);border-top:2px solid var(--victory-gold);} 
@@ -289,88 +302,123 @@ footer{background:var(--core-black);border-top:2px solid var(--victory-gold);}
     <div class="shead rv">
       <span class="eyebrow">Free Quote Tool</span>
       <h2>Estimate life insurance options in <em>under a minute.</em></h2>
-      <p>Use the sliders below for a quick estimate on term coverage or final expense coverage. These are illustrative estimates based on national averages and are not a binding quote.</p>
+      <p>Use the fields below to get a quote and save leads for follow-up. Sales intelligence is captured separately from the estimate.</p>
     </div>
-    <div class="quote-grid">
-      <div class="quote-card rv">
-        <h3 style="font-family:'Fraunces',serif;font-size:1.35rem;color:var(--white-head);">Term Life Estimate</h3>
-        <form class="quote-form" id="term-form">
-          <div class="quote-row">
-            <label for="termAge">Age</label>
-            <input id="termAge" type="range" min="18" max="80" value="45">
-            <div class="value"><span>Current age</span><strong id="termAgeValue">45</strong></div>
+    <div class="quote-tool rv">
+      <div class="quote-tabs">
+        <button type="button" class="tab active" data-type="term">Term Life</button>
+        <button type="button" class="tab" data-type="final">Final Expense</button>
+      </div>
+      <form id="quote-form" class="quote-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="quoteAge">Age</label>
+            <input id="quoteAge" type="number" min="18" max="85" value="45">
           </div>
-          <div class="quote-row">
-            <label for="termGender">Gender</label>
-            <select id="termGender">
+          <div class="form-group">
+            <label for="quoteGender">Gender</label>
+            <select id="quoteGender">
+              <option value="male">Male</option>
               <option value="female">Female</option>
-              <option value="male" selected>Male</option>
             </select>
           </div>
-          <div class="quote-row">
-            <label for="termTobacco">Tobacco use</label>
-            <select id="termTobacco">
-              <option value="no" selected>No</option>
+          <div class="form-group">
+            <label for="quoteTobacco">Tobacco use</label>
+            <select id="quoteTobacco">
+              <option value="no">No</option>
               <option value="yes">Yes</option>
             </select>
           </div>
-          <div class="quote-row">
-            <label for="termCoverage">Coverage amount</label>
-            <input id="termCoverage" type="range" min="100000" max="1000000" step="50000" value="250000">
-            <div class="value"><span>Coverage</span><strong id="termCoverageValue">$250,000</strong></div>
-          </div>
-          <div class="quote-row">
-            <label for="termLength">Term length</label>
-            <input id="termLength" type="range" min="10" max="30" step="10" value="20">
-            <div class="value"><span>Length</span><strong id="termLengthValue">20 years</strong></div>
-          </div>
-          <button class="btn btn-brass" type="submit">Estimate term quote</button>
-        </form>
-        <div class="quote-result">
-          <span class="k">Estimated monthly premium</span>
-          <span class="num" id="termResult">$21/mo</span>
-        </div>
-      </div>
-      <div class="quote-card rv">
-        <h3 style="font-family:'Fraunces',serif;font-size:1.35rem;color:var(--white-head);">Final Expense Estimate</h3>
-        <form class="quote-form" id="final-form">
-          <div class="quote-row">
-            <label for="finalAge">Age</label>
-            <input id="finalAge" type="range" min="50" max="85" value="68">
-            <div class="value"><span>Current age</span><strong id="finalAgeValue">68</strong></div>
-          </div>
-          <div class="quote-row">
-            <label for="finalGender">Gender</label>
-            <select id="finalGender">
-              <option value="female">Female</option>
-              <option value="male" selected>Male</option>
+          <div class="form-group">
+            <label for="quoteCoverage">Coverage amount</label>
+            <select id="quoteCoverage">
+              <option value="10000">$10,000</option>
+              <option value="25000">$25,000</option>
+              <option value="50000">$50,000</option>
+              <option value="100000" selected>$100,000</option>
+              <option value="250000">$250,000</option>
+              <option value="500000">$500,000</option>
+              <option value="750000">$750,000</option>
+              <option value="1000000">$1,000,000</option>
             </select>
           </div>
-          <div class="quote-row">
-            <label for="finalTobacco">Tobacco use</label>
-            <select id="finalTobacco">
-              <option value="no" selected>No</option>
+          <div class="form-group term-only">
+            <label for="quoteTermLength">Term length</label>
+            <select id="quoteTermLength">
+              <option value="10">10 years</option>
+              <option value="15">15 years</option>
+              <option value="20" selected>20 years</option>
+              <option value="25">25 years</option>
+              <option value="30">30 years</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quoteMarital">Marital status</label>
+            <select id="quoteMarital">
+              <option value="single">Single</option>
+              <option value="married">Married</option>
+              <option value="divorced">Divorced</option>
+              <option value="widowed">Widowed</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quoteChildren">Do you have children?</label>
+            <select id="quoteChildren">
+              <option value="no">No</option>
               <option value="yes">Yes</option>
             </select>
           </div>
-          <div class="quote-row">
-            <label for="finalCoverage">Coverage amount</label>
-            <input id="finalCoverage" type="range" min="5000" max="50000" step="5000" value="15000">
-            <div class="value"><span>Coverage</span><strong id="finalCoverageValue">$15,000</strong></div>
+          <div class="form-group">
+            <label for="quoteHousing">Own or rent?</label>
+            <select id="quoteHousing">
+              <option value="own">Own</option>
+              <option value="rent">Rent</option>
+            </select>
           </div>
-          <button class="btn btn-brass" type="submit">Estimate final expense</button>
-        </form>
+          <div class="form-group form-span-2">
+            <label for="quoteReason">Primary reason for coverage</label>
+            <select id="quoteReason">
+              <option value="Mortgage protection">Mortgage protection</option>
+              <option value="Legacy for family">Legacy for family</option>
+              <option value="Funeral/final expenses">Funeral/final expenses</option>
+              <option value="Income replacement">Income replacement</option>
+              <option value="Debt payoff">Debt payoff</option>
+              <option value="Business protection">Business protection</option>
+            </select>
+          </div>
+        </div>
+        <div class="quote-actions">
+          <button class="btn btn-brass" type="button" id="getQuoteBtn">Get quote</button>
+          <button class="btn btn-ghost-em" type="button" id="saveLeadBtn">Save lead</button>
+          <button class="btn btn-ghost" type="button" id="toggleLeadsBtn">Show leads</button>
+        </div>
+      </form>
+      <div class="quote-result-panel">
         <div class="quote-result">
           <span class="k">Estimated monthly premium</span>
-          <span class="num" id="finalResult">$26/mo</span>
+          <span class="num" id="quoteResult">$0/mo</span>
+        </div>
+        <div class="quote-summary">
+          <span id="quoteTypeLabel">Term Life</span>
+          <span id="quoteCoverageLabel">$100,000 coverage</span>
+        </div>
+      </div>
+      <div class="leads-panel" id="leadsPanel" hidden>
+        <div class="leads-header">
+          <h3>Saved leads</h3>
+          <button class="btn btn-ghost" type="button" id="clearLeadsBtn">Clear all</button>
+        </div>
+        <div class="leads-scroll">
+          <table class="leads-table">
+            <thead>
+              <tr><th>Type</th><th>Age / Gender</th><th>Coverage</th><th>Reason</th><th>Premium</th></tr>
+            </thead>
+            <tbody id="leadsTableBody"></tbody>
+          </table>
         </div>
       </div>
     </div>
-    <p class="quote-disclaimer">These quotes are illustrative estimates based on simplified national averages and broad underwriting assumptions. Actual pricing depends on age, health, tobacco use, state availability, carrier underwriting, and the final application review. For a proper quote and a complete recommendation, book a consultation.</p>
-    <div class="quote-cta">
-      <a class="btn btn-brass" href="https://calendly.com/lhernandez55-inc/welcome-to-experior" target="_blank" rel="noopener">Book a call</a>
-      <a class="btn btn-ghost-em" href="#connect">Contact Luis</a>
-    </div>
+    <p class="quote-disclaimer">Estimated national average rate. Actual rates vary by carrier, health class, and underwriting.</p>
   </div>
 </section>
 
@@ -401,15 +449,18 @@ footer{background:var(--core-black);border-top:2px solid var(--victory-gold);}
           <div class="image-card image-card-large">
             <img src="B0A1A421-CE8E-4565-BF6C-7AF8B5351BFF.jpeg" alt="Luis Hernandez, Experior Financial Group">
           </div>
-          <div class="image-stack" style="display:grid;gap:14px;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;">
-            <div class="image-card" style="grid-column:1 / span 2; min-height:220px;">
+          <div class="image-stack" style="display:grid;gap:14px;grid-template-columns:1fr 1fr;">
+            <div class="image-card">
               <img src="9113F56E-5A73-4B76-918B-FF284E8E6E3A_1_105_c.jpeg" alt="Client-focused conversation">
             </div>
-            <div class="image-card" style="min-height:180px;">
+            <div class="image-card">
               <img src="B0B9CCC1-5B5B-41E2-BEBB-600C7CED3D8E_1_105_c.jpeg" alt="A polished professional setting">
             </div>
-            <div class="image-card" style="min-height:180px;">
+            <div class="image-card crop">
               <img src="73B178F2-BF9B-4DB4-940F-FDE9E2771477_1_102_o.jpeg" alt="A calm professional moment">
+            </div>
+            <div class="image-card">
+              <img src="9FA14ACF-9237-4312-8680-26225CC66375.jpeg" alt="Financial planning conversation">
             </div>
           </div>
         </div>
@@ -423,6 +474,9 @@ footer{background:var(--core-black);border-top:2px solid var(--victory-gold);}
           <a class="lc" href="https://docs.google.com/forms/d/e/1FAIpQLSdfvr2W4Eg33lyhfXd9vJL7_Bm6iysYSS-93VV3ZzYoHyNUog/viewform" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/></svg><span>Join the team</span><span class="arr" style="margin-left:auto;font-family:'Spline Sans Mono',monospace;font-size:.8rem;opacity:.5;">↗</span></a>
           <a class="lc" href="https://www.instagram.com/luis_hernandezsatx" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>Follow on Instagram</span><span class="arr" style="margin-left:auto;font-family:'Spline Sans Mono',monospace;font-size:.8rem;opacity:.5;">↗</span></a>
           <a class="lc" href="tel:2104395309" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><path d="M5 5h4l2 4-2 2a15 15 0 006 6l2-2 4 2v4a2 2 0 01-2 2h-1C8 21 3 16 3 9V8a2 2 0 012-2h1z"/></svg><span>210-439-5309</span></a>
+        </div>
+        <div class="luis-cta" style="margin-top:26px;">
+          <a class="btn btn-brass" href="https://calendly.com/lhernandez55-inc/welcome-to-experior" target="_blank" rel="noopener">Book a Call</a>
         </div>
       </div>
     </div>
@@ -443,65 +497,121 @@ footer{background:var(--core-black);border-top:2px solid var(--victory-gold);}
 
 <script>
   const formatCurrency=(value)=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(value);
-  const updateDisplay=(input, target)=>{target.textContent=input.type==='range'?input.id.includes('Coverage')?formatCurrency(Number(input.value)):input.value + (input.id.includes('Length')?' years': ''):input.value;};
+  const formatPremium=(premium)=>{
+    const monthly=Math.max(5, premium);
+    const low=Math.max(3, monthly * 0.92);
+    const high=monthly * 1.12;
+    if(high - low > 2) return `${formatCurrency(Math.round(low))} - ${formatCurrency(Math.round(high))}/mo`;
+    return `${formatCurrency(Math.round(monthly))}/mo`;
+  };
   const estimateTerm=(age, gender, tobacco, coverage, termLength)=>{
-    let rate=age<30?0.055:age<40?0.065:age<50?0.085:age<60?0.115:0.145;
-    if(gender==='male') rate*=1.08;
-    if(tobacco==='yes') rate*=1.55;
-    if(termLength===30) rate*=1.08;
-    if(termLength===10) rate*=0.92;
-    return (coverage/1000)*rate;
+    const ageRates={
+      18:0.10, 25:0.10, 30:0.12, 35:0.15, 40:0.20, 45:0.28, 50:0.35, 55:0.45, 60:0.65, 65:1.00, 70:1.60
+    };
+    const bracket=[18,25,30,35,40,45,50,55,60,65,70].reverse().find(b=>age>=b)||18;
+    const base=ageRates[bracket]||0.10;
+    const genderFactor=gender==='female' ? 0.88 : 1;
+    const tobaccoFactor=tobacco==='yes' ? 2.4 : 1;
+    const termFactors={10:0.96,15:1.08,20:1.20,25:1.35,30:1.55};
+    const termFactor=termFactors[termLength]||1;
+    return (coverage/1000) * base * genderFactor * tobaccoFactor * termFactor;
   };
   const estimateFinal=(age, gender, tobacco, coverage)=>{
-    let rate=age<60?1.45:age<70?1.85:age<80?2.35:2.95;
-    if(gender==='male') rate*=1.05;
-    if(tobacco==='yes') rate*=1.2;
-    return (coverage/1000)*rate;
+    const ageRates={
+      50:3.8, 55:4.5, 60:5.5, 65:7.0, 70:9.0, 75:12.0, 80:18.0, 85:26.0
+    };
+    const bracket=[50,55,60,65,70,75,80,85].reverse().find(b=>age>=b)||3.8;
+    const base=ageRates[bracket]||3.8;
+    const genderFactor=gender==='female' ? 0.9 : 1;
+    const tobaccoFactor=tobacco==='yes' ? 1.8 : 1;
+    return (coverage/1000) * base * genderFactor * tobaccoFactor;
   };
+
+  const loadLeads=()=>{try{return JSON.parse(localStorage.getItem('lifeLeads')||'[]')}catch(e){return[]}};
+  const saveLeads=(leads)=>localStorage.setItem('lifeLeads',JSON.stringify(leads));
 
   window.addEventListener('load',()=>{
     document.body.classList.add('loaded');
     const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
     document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 
-    const termAge=document.getElementById('termAge');
-    const termAgeValue=document.getElementById('termAgeValue');
-    const termCoverage=document.getElementById('termCoverage');
-    const termCoverageValue=document.getElementById('termCoverageValue');
-    const termLength=document.getElementById('termLength');
-    const termLengthValue=document.getElementById('termLengthValue');
-    const termResult=document.getElementById('termResult');
-    const termForm=document.getElementById('term-form');
-    const finalAge=document.getElementById('finalAge');
-    const finalAgeValue=document.getElementById('finalAgeValue');
-    const finalCoverage=document.getElementById('finalCoverage');
-    const finalCoverageValue=document.getElementById('finalCoverageValue');
-    const finalResult=document.getElementById('finalResult');
-    const finalForm=document.getElementById('final-form');
+    const tabs=document.querySelectorAll('.quote-tabs .tab');
+    const quoteTypeLabel=document.getElementById('quoteTypeLabel');
+    const quoteCoverageLabel=document.getElementById('quoteCoverageLabel');
+    const quoteResult=document.getElementById('quoteResult');
+    const quoteAge=document.getElementById('quoteAge');
+    const quoteGender=document.getElementById('quoteGender');
+    const quoteTobacco=document.getElementById('quoteTobacco');
+    const quoteCoverage=document.getElementById('quoteCoverage');
+    const quoteTermLength=document.getElementById('quoteTermLength');
+    const quoteMarital=document.getElementById('quoteMarital');
+    const quoteChildren=document.getElementById('quoteChildren');
+    const quoteHousing=document.getElementById('quoteHousing');
+    const quoteReason=document.getElementById('quoteReason');
+    const getQuoteBtn=document.getElementById('getQuoteBtn');
+    const saveLeadBtn=document.getElementById('saveLeadBtn');
+    const toggleLeadsBtn=document.getElementById('toggleLeadsBtn');
+    const leadsPanel=document.getElementById('leadsPanel');
+    const leadsTableBody=document.getElementById('leadsTableBody');
+    const clearLeadsBtn=document.getElementById('clearLeadsBtn');
+    const termFields=document.querySelectorAll('.term-only');
 
-    [termAge,termCoverage,termLength].forEach(input=>input.addEventListener('input',()=>{
-      if(input===termAge) termAgeValue.textContent=input.value;
-      if(input===termCoverage) termCoverageValue.textContent=formatCurrency(Number(input.value));
-      if(input===termLength) termLengthValue.textContent=input.value+' years';
-    }));
-    [finalAge,finalCoverage].forEach(input=>input.addEventListener('input',()=>{
-      if(input===finalAge) finalAgeValue.textContent=input.value;
-      if(input===finalCoverage) finalCoverageValue.textContent=formatCurrency(Number(input.value));
-    }));
-
-    termForm.addEventListener('submit',(event)=>{
-      event.preventDefault();
-      const monthly=estimateTerm(Number(termAge.value), document.getElementById('termGender').value, document.getElementById('termTobacco').value, Number(termCoverage.value), Number(termLength.value));
-      termResult.textContent=formatCurrency(monthly)+'/mo';
+    let activeType='term';
+    const getFormData=()=>({
+      type:activeType,
+      age:Number(quoteAge.value),
+      gender:quoteGender.value,
+      tobacco:quoteTobacco.value,
+      coverage:Number(quoteCoverage.value),
+      termLength:activeType==='term' ? Number(quoteTermLength.value) : null,
+      marital:quoteMarital.value,
+      children:quoteChildren.value,
+      housing:quoteHousing.value,
+      reason:quoteReason.value,
     });
-    finalForm.addEventListener('submit',(event)=>{
-      event.preventDefault();
-      const monthly=estimateFinal(Number(finalAge.value), document.getElementById('finalGender').value, document.getElementById('finalTobacco').value, Number(finalCoverage.value));
-      finalResult.textContent=formatCurrency(monthly)+'/mo';
-    });
 
-    termForm.dispatchEvent(new Event('submit'));
-    finalForm.dispatchEvent(new Event('submit'));
+    const updateQuoteDisplay=(value)=>{
+      quoteResult.textContent=formatPremium(value);
+      quoteTypeLabel.textContent=activeType==='term' ? 'Term Life' : 'Final Expense';
+      quoteCoverageLabel.textContent=`${formatCurrency(Number(quoteCoverage.value))} coverage`;
+    };
+
+    const calculateQuote=()=>{
+      const data=getFormData();
+      const premium=activeType==='term'
+        ? estimateTerm(data.age,data.gender,data.tobacco,data.coverage,data.termLength)
+        : estimateFinal(data.age,data.gender,data.tobacco,data.coverage);
+      updateQuoteDisplay(Math.max(premium,0));
+      return premium;
+    };
+
+    const renderLeads=()=>{
+      const leads=loadLeads();
+      leadsTableBody.innerHTML=leads.map(lead=>`<tr><td>${lead.type}</td><td>${lead.age} / ${lead.gender}</td><td>${formatCurrency(lead.coverage)}</td><td>${lead.reason}</td><td>${formatCurrency(lead.premium)}/mo</td></tr>`).join('');
+    };
+
+    const setActiveTab=(type)=>{
+      activeType=type;
+      tabs.forEach(tab=>tab.classList.toggle('active', tab.dataset.type===type));
+      termFields.forEach(el=>el.style.display=type==='term' ? 'grid' : 'none');
+      calculateQuote();
+    };
+
+    tabs.forEach(tab=>tab.addEventListener('click',()=>setActiveTab(tab.dataset.type)));
+    getQuoteBtn.addEventListener('click',calculateQuote);
+    saveLeadBtn.addEventListener('click',()=>{
+      const premium=calculateQuote();
+      const leads=loadLeads();
+      leads.unshift({...getFormData(), premium});
+      saveLeads(leads);
+      renderLeads();
+      if(leadsPanel.hidden) leadsPanel.hidden=false;
+    });
+    toggleLeadsBtn.addEventListener('click',()=>{leadsPanel.hidden=!leadsPanel.hidden;toggleLeadsBtn.textContent=leadsPanel.hidden?'Show leads':'Hide leads';});
+    clearLeadsBtn.addEventListener('click',()=>{saveLeads([]);renderLeads();});
+
+    renderLeads();
+    setActiveTab('term');
   });
 </script>
 </body>
