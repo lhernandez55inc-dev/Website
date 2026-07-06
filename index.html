@@ -203,15 +203,18 @@ footer{background:var(--core-black);border-top:2px solid var(--victory-gold);}
 .partners-head h2{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3.3vw,2.6rem);line-height:1.12;color:var(--white-head);margin-top:6px;max-width:16ch;}
 .partners-head p{margin-top:18px;max-width:62ch;font-size:1rem;line-height:1.7;color:var(--steel-chrome);}
 .partner-marquee{position:relative;overflow:hidden;margin-top:32px;border-radius:8px;border:1px solid rgba(212,175,55,0.16);background:var(--core-black);} 
-.partner-track{display:flex;gap:18px;padding:22px 18px;min-width:max-content;scroll-behavior:smooth;overflow-x:auto;scrollbar-width:none;} 
+.partner-track{display:flex;gap:18px;padding:22px 18px;scroll-behavior:smooth;overflow-x:auto;scrollbar-width:none;scroll-snap-type:x mandatory;} 
 .partner-track::-webkit-scrollbar{display:none;} 
-a.partner-card{flex:0 0 220px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:10px;text-decoration:none;transition:transform .25s,border-color .25s;background:rgba(255,255,255,0.04);} 
-a.partner-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,0.35);} 
-.partner-logo-card{align-items:center;justify-content:center;min-height:180px;padding:20px;} 
+.partner-card{flex:0 0 250px;scroll-snap-align:start;background:linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03));border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;min-height:180px;transition:transform .25s,border-color .25s,box-shadow .25s;box-shadow:0 10px 30px rgba(0,0,0,0.22);} 
+.partner-card:hover{transform:translateY(-3px);border-color:rgba(212,175,55,0.38);box-shadow:0 16px 38px rgba(0,0,0,0.34);} 
+.partner-logo-card{padding:20px;} 
 .partner-logo-link{display:block;width:100%;text-decoration:none;} 
-.partner-logo{width:100%;max-height:72px;object-fit:contain;object-position:center;display:block;margin:0 auto;padding:10px;border-radius:16px;border:1px solid rgba(255,255,255,0.12);background:linear-gradient(135deg,#132238 0%,#163d6f 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.12);} 
+.partner-logo{width:100%;max-height:64px;object-fit:contain;object-position:center;display:block;margin:0 auto;padding:0;border:none;background:transparent;box-shadow:none;filter:drop-shadow(0 6px 10px rgba(0,0,0,0.25));} 
 .partner-slider{max-width:360px;margin:14px auto 0;padding:0 18px 18px;} 
 .partner-slider-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px;font-family:'Spline Sans Mono',monospace;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,0.72);} 
+.partner-slider-controls{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:10px;} 
+.partner-arrow{height:38px;width:38px;border-radius:999px;border:1px solid rgba(212,175,55,0.36);background:rgba(255,255,255,0.05);color:var(--white-head);font-size:1.1rem;cursor:pointer;transition:background .2s,border-color .2s,transform .2s;} 
+.partner-arrow:hover{background:rgba(212,175,55,0.2);border-color:rgba(212,175,55,0.54);transform:translateY(-1px);} 
 .partner-slider input[type="range"]{width:100%;height:8px;appearance:none;-webkit-appearance:none;background:linear-gradient(90deg,var(--victory-gold) 0,var(--victory-gold) var(--slider-progress,0%),rgba(255,255,255,0.12) var(--slider-progress,0%),rgba(255,255,255,0.12) 100%);border:1px solid rgba(255,255,255,0.16);border-radius:999px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.08);cursor:pointer;outline:none;} 
 .partner-slider input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:999px;background:var(--white-head);border:2px solid var(--victory-gold);box-shadow:0 0 0 4px rgba(212,175,55,0.18);cursor:pointer;} 
 .partner-slider input[type="range"]::-moz-range-thumb{width:18px;height:18px;border:none;border-radius:999px;background:var(--white-head);border:2px solid var(--victory-gold);box-shadow:0 0 0 4px rgba(212,175,55,0.18);cursor:pointer;} 
@@ -416,7 +419,11 @@ a.partner-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,0.3
           <span>Swipe to explore</span>
           <span id="partnerSliderValue">0%</span>
         </div>
-        <input id="partnerSlider" type="range" min="0" max="100" value="0" aria-label="Carousel position">
+        <div class="partner-slider-controls">
+          <button id="partnerPrev" class="partner-arrow" type="button" aria-label="Scroll partner logos left">&#x2039;</button>
+          <input id="partnerSlider" type="range" min="0" max="100" value="0" aria-label="Carousel position">
+          <button id="partnerNext" class="partner-arrow" type="button" aria-label="Scroll partner logos right">&#x203A;</button>
+        </div>
       </div>
     </div>
   </div>
@@ -609,6 +616,15 @@ a.partner-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,0.3
   const partnerTrack=document.getElementById('partnerTrack');
   const partnerSlider=document.getElementById('partnerSlider');
   const partnerSliderValue=document.getElementById('partnerSliderValue');
+  const partnerPrev=document.getElementById('partnerPrev');
+  const partnerNext=document.getElementById('partnerNext');
+  const getPartnerStep=()=>{
+    const firstCard=partnerTrack ? partnerTrack.querySelector('.partner-card') : null;
+    if(!firstCard) return 280;
+    const styles=window.getComputedStyle(partnerTrack);
+    const gap=parseFloat(styles.columnGap || styles.gap || '18');
+    return firstCard.getBoundingClientRect().width + gap;
+  };
   const syncPartnerSlider=()=>{
     if(!partnerTrack || !partnerSlider) return;
     const maxScroll=Math.max(0, partnerTrack.scrollWidth - partnerTrack.clientWidth);
@@ -621,14 +637,25 @@ a.partner-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,0.3
   };
   if(partnerTrack && partnerSlider){
     partnerTrack.addEventListener('scroll', syncPartnerSlider, {passive:true});
+    window.addEventListener('resize', syncPartnerSlider);
     partnerSlider.addEventListener('input',()=>{
       const maxScroll=Math.max(0, partnerTrack.scrollWidth - partnerTrack.clientWidth);
       if(maxScroll<=0) return;
       const value=Number(partnerSlider.value);
       partnerSlider.style.setProperty('--slider-progress', `${value}%`);
       if(partnerSliderValue) partnerSliderValue.textContent=`${value}%`;
-      partnerTrack.scrollTo({left:(value/100)*maxScroll, behavior:'smooth'});
+      partnerTrack.scrollTo({left:(value/100)*maxScroll, behavior:'auto'});
     });
+    if(partnerPrev){
+      partnerPrev.addEventListener('click',()=>{
+        partnerTrack.scrollBy({left:-getPartnerStep(), behavior:'smooth'});
+      });
+    }
+    if(partnerNext){
+      partnerNext.addEventListener('click',()=>{
+        partnerTrack.scrollBy({left:getPartnerStep(), behavior:'smooth'});
+      });
+    }
   }
   syncPartnerSlider();
 
