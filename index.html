@@ -164,6 +164,7 @@ img{display:block;max-width:100%;}
 .quote-result{background:var(--core-black);border:1px solid var(--onyx);padding:24px;display:flex;flex-direction:column;gap:10px;} 
 .quote-result .k{font-family:'Spline Sans Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--steel-chrome);} 
 .quote-result .num{font-family:'Fraunces',serif;font-size:2rem;color:var(--white-head);} 
+.quote-result .quote-actions{margin-top:8px;} 
 .quote-summary{display:flex;flex-direction:column;gap:8px;font-size:.95rem;color:var(--steel-chrome);} 
 .quote-summary span{display:block;} 
 .leads-panel{background:var(--core-black);border:1px solid var(--onyx);padding:22px;display:flex;flex-direction:column;gap:18px;} 
@@ -495,14 +496,14 @@ footer{background:var(--core-black);border-top:2px solid var(--victory-gold);}
             </select>
           </div>
         </div>
-        <div class="quote-actions">
-          <button class="btn btn-brass" type="button" id="getQuoteBtn">Get quote</button>
-        </div>
       </form>
       <div class="quote-result-panel">
         <div class="quote-result">
           <span class="k">Estimated monthly premium</span>
           <span class="num" id="quoteResult">$0/mo</span>
+          <div class="quote-actions">
+            <button class="btn btn-brass" type="button" id="getQuoteBtn">Get quote</button>
+          </div>
         </div>
         <div class="quote-summary">
           <span id="quoteTypeLabel">Term Life</span>
@@ -510,7 +511,7 @@ footer{background:var(--core-black);border-top:2px solid var(--victory-gold);}
         </div>
       </div>
     </div>
-    <p class="quote-disclaimer">Estimated national average rate. Actual rates vary by carrier, health class, and underwriting.</p>
+    <p class="quote-disclaimer">This quote is a quick educational estimate based on broad national averages, not a binding offer. Final pricing and eligibility can vary significantly by carrier guidelines, medical history, prescriptions, tobacco use, state, product structure, and underwriting class. For the most accurate quote and best available options, speak directly with a licensed insurance agent who can review your full profile and shop carrier-specific rates.</p>
   </div>
 </section>
 
