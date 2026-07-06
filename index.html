@@ -209,8 +209,12 @@ a.partner-card{flex:0 0 220px;background:rgba(255,255,255,0.03);border:1px solid
 a.partner-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,0.35);} 
 .partner-logo-card{align-items:center;justify-content:center;min-height:160px;padding:20px;} 
 .partner-logo{width:100%;max-height:72px;object-fit:contain;object-position:center;display:block;margin:0 auto;padding:10px;border-radius:16px;border:1px solid rgba(255,255,255,0.12);background:linear-gradient(135deg,#132238 0%,#163d6f 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.12);} 
-.partner-slider{max-width:320px;margin:10px auto 0;padding:0 18px 18px;} 
-.partner-slider input[type="range"]{width:100%;accent-color:var(--victory-gold);cursor:pointer;} 
+.partner-slider{max-width:360px;margin:14px auto 0;padding:0 18px 18px;} 
+.partner-slider-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px;font-family:'Spline Sans Mono',monospace;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,0.72);} 
+.partner-slider input[type="range"]{width:100%;height:8px;appearance:none;-webkit-appearance:none;background:linear-gradient(90deg,var(--victory-gold) 0,var(--victory-gold) var(--slider-progress,0%),rgba(255,255,255,0.12) var(--slider-progress,0%),rgba(255,255,255,0.12) 100%);border:1px solid rgba(255,255,255,0.16);border-radius:999px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.08);cursor:pointer;outline:none;} 
+.partner-slider input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:999px;background:var(--white-head);border:2px solid var(--victory-gold);box-shadow:0 0 0 4px rgba(212,175,55,0.18);cursor:pointer;} 
+.partner-slider input[type="range"]::-moz-range-thumb{width:18px;height:18px;border:none;border-radius:999px;background:var(--white-head);border:2px solid var(--victory-gold);box-shadow:0 0 0 4px rgba(212,175,55,0.18);cursor:pointer;} 
+.partner-slider input[type="range"]::-moz-range-track{height:8px;border:none;border-radius:999px;background:transparent;} 
 .partner-card span{font-size:.8rem;line-height:1.4;color:var(--steel-chrome);text-align:center;font-family:'Spline Sans Mono',monospace;letter-spacing:.12em;text-transform:uppercase;} 
 .why-grid{grid-template-columns:0.95fr 1.05fr;align-items:start;}
 .luis-grid{grid-template-columns:0.9fr 1.1fr;align-items:center;gap:56px;}
@@ -341,6 +345,10 @@ a.partner-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,0.3
         <a class="partner-card partner-logo-card" href="https://www.nationwide.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="Nationwide.png" alt="Nationwide" loading="lazy"><span>Nationwide</span></a>
       </div>
       <div class="partner-slider">
+        <div class="partner-slider-meta">
+          <span>Swipe to explore</span>
+          <span id="partnerSliderValue">0%</span>
+        </div>
         <input id="partnerSlider" type="range" min="0" max="100" value="0" aria-label="Carousel position">
       </div>
     </div>
@@ -533,19 +541,26 @@ a.partner-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,0.3
 <script>
   const partnerTrack=document.getElementById('partnerTrack');
   const partnerSlider=document.getElementById('partnerSlider');
+  const partnerSliderValue=document.getElementById('partnerSliderValue');
   const syncPartnerSlider=()=>{
     if(!partnerTrack || !partnerSlider) return;
     const maxScroll=Math.max(0, partnerTrack.scrollWidth - partnerTrack.clientWidth);
-    if(maxScroll<=0){partnerSlider.value='0'; return;}
+    if(maxScroll<=0){partnerSlider.value='0'; partnerSlider.style.setProperty('--slider-progress','0%'); if(partnerSliderValue) partnerSliderValue.textContent='0%'; return;}
     const ratio=partnerTrack.scrollLeft/maxScroll;
-    partnerSlider.value=Math.round(ratio*100);
+    const value=Math.round(ratio*100);
+    partnerSlider.value=String(value);
+    partnerSlider.style.setProperty('--slider-progress', `${value}%`);
+    if(partnerSliderValue) partnerSliderValue.textContent=`${value}%`;
   };
   if(partnerTrack && partnerSlider){
     partnerTrack.addEventListener('scroll', syncPartnerSlider, {passive:true});
     partnerSlider.addEventListener('input',()=>{
       const maxScroll=Math.max(0, partnerTrack.scrollWidth - partnerTrack.clientWidth);
       if(maxScroll<=0) return;
-      partnerTrack.scrollTo({left:(Number(partnerSlider.value)/100)*maxScroll, behavior:'smooth'});
+      const value=Number(partnerSlider.value);
+      partnerSlider.style.setProperty('--slider-progress', `${value}%`);
+      if(partnerSliderValue) partnerSliderValue.textContent=`${value}%`;
+      partnerTrack.scrollTo({left:(value/100)*maxScroll, behavior:'smooth'});
     });
   }
   syncPartnerSlider();
