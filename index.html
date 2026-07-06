@@ -315,29 +315,33 @@ a.partner-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,0.3
   <div class="partners-in rv">
     <div class="partners-head">
       <div>
-        <span class="eyebrow">Our Partner Network</span>
-        <h2>Trusted referral partners and referral channels.</h2>
+        <span class="eyebrow">Trusted Insurance Carriers</span>
+        <h2>Carrier partners clients can explore directly.</h2>
       </div>
-      <p>Experior connects clients and partners with a network of trusted professionals, carrier support, and service resources that help families feel secure and advisors feel supported.</p>
+      <p>Each tile below represents a carrier partner and opens that carrier’s own website when clicked, so visitors can learn more directly.</p>
     </div>
     <div class="partner-marquee" aria-label="Trusted insurance carrier partners">
-      <div class="partner-track">
-        <a class="partner-card partner-logo-card" href="https://www.mutualofomaha.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/mutualofomaha.com" alt="Mutual of Omaha"><span>Mutual of Omaha</span></a>
-        <a class="partner-card partner-logo-card" href="https://www.guardianlife.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/guardianlife.com" alt="Guardian Life"><span>Guardian Life</span></a>
-        <a class="partner-card partner-logo-card" href="https://www.transamerica.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/transamerica.com" alt="Transamerica"><span>Transamerica</span></a>
-        <a class="partner-card partner-logo-card" href="https://www.prudential.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/prudential.com" alt="Prudential"><span>Prudential</span></a>
-        <a class="partner-card partner-logo-card" href="https://www.massmutual.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/massmutual.com" alt="MassMutual"><span>MassMutual</span></a>
-        <a class="partner-card partner-logo-card" href="https://www.nationwide.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/nationwide.com" alt="Nationwide"><span>Nationwide</span></a>
-        <a class="partner-card partner-logo-card" href="https://www.americo.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/americo.com" alt="Americo"><span>Americo</span></a>
-        <a class="partner-card partner-logo-card" href="https://www.lfg.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/lfg.com" alt="Lincoln Financial Group"><span>Lincoln Financial</span></a>
-        <a class="partner-card partner-logo-card" href="https://www.mutualofomaha.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/mutualofomaha.com" alt="Mutual of Omaha"><span>Mutual of Omaha</span></a>
-        <a class="partner-card partner-logo-card" href="https://www.guardianlife.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/guardianlife.com" alt="Guardian Life"><span>Guardian Life</span></a>
-        <a class="partner-card partner-logo-card" href="https://www.transamerica.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/transamerica.com" alt="Transamerica"><span>Transamerica</span></a>
-        <a class="partner-card partner-logo-card" href="https://www.prudential.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/prudential.com" alt="Prudential"><span>Prudential</span></a>
-        <a class="partner-card partner-logo-card" href="https://www.massmutual.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/massmutual.com" alt="MassMutual"><span>MassMutual</span></a>
-        <a class="partner-card partner-logo-card" href="https://www.nationwide.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/nationwide.com" alt="Nationwide"><span>Nationwide</span></a>
-        <a class="partner-card partner-logo-card" href="https://www.americo.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/americo.com" alt="Americo"><span>Americo</span></a>
-        <a class="partner-card partner-logo-card" href="https://www.lfg.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/lfg.com" alt="Lincoln Financial Group"><span>Lincoln Financial</span></a>
+      <div class="partner-controls">
+        <button type="button" class="partner-nav" data-dir="prev" aria-label="Scroll left">←</button>
+        <button type="button" class="partner-nav" data-dir="next" aria-label="Scroll right">→</button>
+      </div>
+      <div class="partner-track" id="partnerTrack">
+        <a class="partner-card partner-logo-card" href="https://www.nationallife.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" data-carrier="National Life Group" alt="National Life Group" loading="lazy"><span>National Life Group</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.assurity.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" data-carrier="Assurity" alt="Assurity" loading="lazy"><span>Assurity</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.mutualofomaha.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" data-carrier="Mutual of Omaha" alt="Mutual of Omaha" loading="lazy"><span>Mutual of Omaha</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.guardianlife.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" data-carrier="Guardian Life" alt="Guardian Life" loading="lazy"><span>Guardian Life</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.transamerica.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" data-carrier="Transamerica" alt="Transamerica" loading="lazy"><span>Transamerica</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.prudential.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" data-carrier="Prudential" alt="Prudential" loading="lazy"><span>Prudential</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.massmutual.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" data-carrier="MassMutual" alt="MassMutual" loading="lazy"><span>MassMutual</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.nationwide.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" data-carrier="Nationwide" alt="Nationwide" loading="lazy"><span>Nationwide</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.nationallife.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" data-carrier="National Life Group" alt="National Life Group" loading="lazy"><span>National Life Group</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.assurity.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" data-carrier="Assurity" alt="Assurity" loading="lazy"><span>Assurity</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.mutualofomaha.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" data-carrier="Mutual of Omaha" alt="Mutual of Omaha" loading="lazy"><span>Mutual of Omaha</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.guardianlife.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" data-carrier="Guardian Life" alt="Guardian Life" loading="lazy"><span>Guardian Life</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.transamerica.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" data-carrier="Transamerica" alt="Transamerica" loading="lazy"><span>Transamerica</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.prudential.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" data-carrier="Prudential" alt="Prudential" loading="lazy"><span>Prudential</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.massmutual.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" data-carrier="MassMutual" alt="MassMutual" loading="lazy"><span>MassMutual</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.nationwide.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" data-carrier="Nationwide" alt="Nationwide" loading="lazy"><span>Nationwide</span></a>
       </div>
     </div>
   </div>
@@ -527,6 +531,40 @@ a.partner-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,0.3
 </footer>
 
 <script>
+  const partnerTrack=document.getElementById('partnerTrack');
+  const partnerNavButtons=document.querySelectorAll('.partner-nav');
+  const carrierLogoPalette={
+    'National Life Group': {bg:'#0f4c81', fg:'#f4c542'},
+    Assurity: {bg:'#0c6b6b', fg:'#ffffff'},
+    'Mutual of Omaha': {bg:'#0f2f5f', fg:'#f4c542'},
+    'Guardian Life': {bg:'#163d6f', fg:'#f7d36a'},
+    Transamerica: {bg:'#0f3d54', fg:'#ffffff'},
+    Prudential: {bg:'#b61e2c', fg:'#ffffff'},
+    MassMutual: {bg:'#183f67', fg:'#f7c948'},
+    Nationwide: {bg:'#0a4b8f', fg:'#ffffff'}
+  };
+  const createCarrierLogoSvg=(name)=>{
+    const palette=carrierLogoPalette[name]||{bg:'#132238', fg:'#f4c542'};
+    const initials=name.split(/\s+/).slice(0,2).map(word=>word[0]||'').join('').toUpperCase();
+    const safeName=name.replace(/&/g,'&amp;');
+    return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180"><rect width="320" height="180" rx="24" fill="${palette.bg}"/><rect x="24" y="24" width="272" height="132" rx="18" fill="rgba(255,255,255,0.12)"/><text x="48" y="92" font-family="Arial, sans-serif" font-size="56" font-weight="700" fill="${palette.fg}">${initials}</text><text x="48" y="132" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="${palette.fg}">${safeName}</text></svg>`)}`;
+  };
+  const populateCarrierLogos=()=>{
+    document.querySelectorAll('.partner-logo').forEach((img)=>{
+      const name=img.getAttribute('data-carrier')||'Carrier';
+      img.src=createCarrierLogoSvg(name);
+      img.alt=name;
+    });
+  };
+  if(partnerTrack && partnerNavButtons.length){
+    const scrollAmount=260;
+    partnerNavButtons.forEach(btn=>btn.addEventListener('click',()=>{
+      const direction=btn.dataset.dir==='next' ? 1 : -1;
+      partnerTrack.scrollBy({left:direction*scrollAmount,behavior:'smooth'});
+    }));
+  }
+  populateCarrierLogos();
+
   const formatCurrency=(value)=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(value);
   const formatPremium=(premium)=>{
     const monthly=Math.max(5, premium);
