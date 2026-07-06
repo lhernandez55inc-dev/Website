@@ -203,12 +203,13 @@ footer{background:var(--core-black);border-top:2px solid var(--victory-gold);}
 .partners-head h2{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3.3vw,2.6rem);line-height:1.12;color:var(--white-head);margin-top:6px;max-width:16ch;}
 .partners-head p{margin-top:18px;max-width:62ch;font-size:1rem;line-height:1.7;color:var(--steel-chrome);}
 .partner-marquee{position:relative;overflow:hidden;margin-top:32px;border-radius:8px;border:1px solid rgba(212,175,55,0.16);background:var(--core-black);}
-.partner-track{display:flex;gap:18px;padding:22px 18px;min-width:200%;animation:scrollPartners 28s linear infinite;}
-.partner-track:hover{animation-play-state:paused;}
-a.partner-card{flex:0 0 220px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:10px;text-decoration:none;transition:transform .25s,border-color .25s;background:rgba(255,255,255,0.04);}
-a.partner-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,0.35);}
-.partner-card strong{font-family:'Fraunces',serif;font-size:1rem;color:var(--white-head);}
-.partner-card span{font-size:.93rem;line-height:1.6;color:var(--steel-chrome);}
+.partner-track{display:flex;gap:18px;padding:22px 18px;min-width:max-content;animation:scrollPartners 24s linear infinite;} 
+.partner-track:hover{animation-play-state:paused;} 
+a.partner-card{flex:0 0 220px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:10px;text-decoration:none;transition:transform .25s,border-color .25s;background:rgba(255,255,255,0.04);} 
+a.partner-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,0.35);} 
+.partner-logo-card{align-items:center;justify-content:center;min-height:160px;padding:20px;} 
+.partner-logo{width:100%;height:72px;object-fit:contain;object-position:center;display:block;filter:brightness(1.05);} 
+.partner-card span{font-size:.8rem;line-height:1.4;color:var(--steel-chrome);text-align:center;font-family:'Spline Sans Mono',monospace;letter-spacing:.12em;text-transform:uppercase;} 
 @keyframes scrollPartners{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 .why-grid{grid-template-columns:0.95fr 1.05fr;align-items:start;}
 .luis-grid{grid-template-columns:0.9fr 1.1fr;align-items:center;gap:56px;}
@@ -319,22 +320,24 @@ a.partner-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,0.3
       </div>
       <p>Experior connects clients and partners with a network of trusted professionals, carrier support, and service resources that help families feel secure and advisors feel supported.</p>
     </div>
-    <div class="partner-marquee" aria-label="Partners scrolling list">
+    <div class="partner-marquee" aria-label="Trusted insurance carrier partners">
       <div class="partner-track">
-        <a class="partner-card" href="https://www.experiorfinancial.com/partners/financial-advisors" target="_blank" rel="noopener noreferrer"><strong>Financial Advisors</strong><span>Collaborating with planners who want stronger protection solutions.</span></a>
-        <a class="partner-card" href="https://www.experiorfinancial.com/partners/estate-planners" target="_blank" rel="noopener noreferrer"><strong>Estate Planners</strong><span>Coordinating legacy plans that preserve value and reduce risk.</span></a>
-        <a class="partner-card" href="https://www.experiorfinancial.com/partners/mortgage-brokers" target="_blank" rel="noopener noreferrer"><strong>Mortgage Brokers</strong><span>Helping homeowners secure protection for their largest investment.</span></a>
-        <a class="partner-card" href="https://www.experiorfinancial.com/partners/cpa-partners" target="_blank" rel="noopener noreferrer"><strong>CPA Partners</strong><span>Aligning financial strategy with tax-aware insurance planning.</span></a>
-        <a class="partner-card" href="https://www.experiorfinancial.com/partners/business-owners" target="_blank" rel="noopener noreferrer"><strong>Business Owners</strong><span>Supporting succession plans, key person coverage, and income protection.</span></a>
-        <a class="partner-card" href="https://www.experiorfinancial.com/partners/real-estate-pros" target="_blank" rel="noopener noreferrer"><strong>Real Estate Pros</strong><span>Referral partnerships that deliver protection for clients and families.</span></a>
-        <a class="partner-card" href="https://www.experiorfinancial.com/partners/attorneys" target="_blank" rel="noopener noreferrer"><strong>Attorney Network</strong><span>Trusted collaboration for family law, estate, and business planning.</span></a>
-        <a class="partner-card" href="https://www.experiorfinancial.com/partners/veteran-owned" target="_blank" rel="noopener noreferrer"><strong>Veteran-owned firms</strong><span>A shared commitment to discipline, loyalty, and mission-focused service.</span></a>
-        <a class="partner-card" href="https://www.experiorfinancial.com/partners/financial-teams" target="_blank" rel="noopener noreferrer"><strong>Financial Services Teams</strong><span>Partnering with agencies that want reliable underwriting access and support.</span></a>
-        <a class="partner-card" href="https://www.experiorfinancial.com/partners/client-first" target="_blank" rel="noopener noreferrer"><strong>Client-first advisors</strong><span>Working with advisors who value clarity, speed, and purposeful communication.</span></a>
-        <a class="partner-card" href="https://www.experiorfinancial.com/partners/financial-advisors" target="_blank" rel="noopener noreferrer"><strong>Financial Advisors</strong><span>Collaborating with planners who want stronger protection solutions.</span></a>
-        <a class="partner-card" href="https://www.experiorfinancial.com/partners/estate-planners" target="_blank" rel="noopener noreferrer"><strong>Estate Planners</strong><span>Coordinating legacy plans that preserve value and reduce risk.</span></a>
-        <a class="partner-card" href="https://www.experiorfinancial.com/partners/mortgage-brokers" target="_blank" rel="noopener noreferrer"><strong>Mortgage Brokers</strong><span>Helping homeowners secure protection for their largest investment.</span></a>
-        <a class="partner-card" href="https://www.experiorfinancial.com/partners/cpa-partners" target="_blank" rel="noopener noreferrer"><strong>CPA Partners</strong><span>Aligning financial strategy with tax-aware insurance planning.</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.mutualofomaha.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/mutualofomaha.com" alt="Mutual of Omaha"><span>Mutual of Omaha</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.guardianlife.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/guardianlife.com" alt="Guardian Life"><span>Guardian Life</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.transamerica.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/transamerica.com" alt="Transamerica"><span>Transamerica</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.prudential.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/prudential.com" alt="Prudential"><span>Prudential</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.massmutual.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/massmutual.com" alt="MassMutual"><span>MassMutual</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.nationwide.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/nationwide.com" alt="Nationwide"><span>Nationwide</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.americo.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/americo.com" alt="Americo"><span>Americo</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.lfg.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/lfg.com" alt="Lincoln Financial Group"><span>Lincoln Financial</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.mutualofomaha.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/mutualofomaha.com" alt="Mutual of Omaha"><span>Mutual of Omaha</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.guardianlife.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/guardianlife.com" alt="Guardian Life"><span>Guardian Life</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.transamerica.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/transamerica.com" alt="Transamerica"><span>Transamerica</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.prudential.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/prudential.com" alt="Prudential"><span>Prudential</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.massmutual.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/massmutual.com" alt="MassMutual"><span>MassMutual</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.nationwide.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/nationwide.com" alt="Nationwide"><span>Nationwide</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.americo.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/americo.com" alt="Americo"><span>Americo</span></a>
+        <a class="partner-card partner-logo-card" href="https://www.lfg.com/" target="_blank" rel="noopener noreferrer"><img class="partner-logo" src="https://logo.clearbit.com/lfg.com" alt="Lincoln Financial Group"><span>Lincoln Financial</span></a>
       </div>
     </div>
   </div>
@@ -345,7 +348,7 @@ a.partner-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,0.3
     <div class="shead rv">
       <span class="eyebrow">Free Quote Tool</span>
       <h2>Estimate life insurance options in <em>under a minute.</em></h2>
-      <p>Use the fields below to get a quote and save leads for follow-up. Sales intelligence is captured separately from the estimate.</p>
+      <p>Use the fields below to get a quote. Sales intelligence is captured separately from the estimate.</p>
     </div>
     <div class="quote-tool rv">
       <div class="quote-tabs">
@@ -432,8 +435,6 @@ a.partner-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,0.3
         </div>
         <div class="quote-actions">
           <button class="btn btn-brass" type="button" id="getQuoteBtn">Get quote</button>
-          <button class="btn btn-ghost-em" type="button" id="saveLeadBtn">Save lead</button>
-          <button class="btn btn-ghost" type="button" id="toggleLeadsBtn">Show leads</button>
         </div>
       </form>
       <div class="quote-result-panel">
@@ -444,20 +445,6 @@ a.partner-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,0.3
         <div class="quote-summary">
           <span id="quoteTypeLabel">Term Life</span>
           <span id="quoteCoverageLabel">$100,000 coverage</span>
-        </div>
-      </div>
-      <div class="leads-panel" id="leadsPanel" hidden>
-        <div class="leads-header">
-          <h3>Saved leads</h3>
-          <button class="btn btn-ghost" type="button" id="clearLeadsBtn">Clear all</button>
-        </div>
-        <div class="leads-scroll">
-          <table class="leads-table">
-            <thead>
-              <tr><th>Type</th><th>Age / Gender</th><th>Coverage</th><th>Reason</th><th>Premium</th></tr>
-            </thead>
-            <tbody id="leadsTableBody"></tbody>
-          </table>
         </div>
       </div>
     </div>
@@ -571,9 +558,6 @@ a.partner-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,0.3
     return (coverage/1000) * base * genderFactor * tobaccoFactor;
   };
 
-  const loadLeads=()=>{try{return JSON.parse(localStorage.getItem('lifeLeads')||'[]')}catch(e){return[]}};
-  const saveLeads=(leads)=>localStorage.setItem('lifeLeads',JSON.stringify(leads));
-
   window.addEventListener('load',()=>{
     document.body.classList.add('loaded');
     const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
@@ -593,11 +577,6 @@ a.partner-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,0.3
     const quoteHousing=document.getElementById('quoteHousing');
     const quoteReason=document.getElementById('quoteReason');
     const getQuoteBtn=document.getElementById('getQuoteBtn');
-    const saveLeadBtn=document.getElementById('saveLeadBtn');
-    const toggleLeadsBtn=document.getElementById('toggleLeadsBtn');
-    const leadsPanel=document.getElementById('leadsPanel');
-    const leadsTableBody=document.getElementById('leadsTableBody');
-    const clearLeadsBtn=document.getElementById('clearLeadsBtn');
     const termFields=document.querySelectorAll('.term-only');
 
     let activeType='term';
@@ -629,11 +608,6 @@ a.partner-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,0.3
       return premium;
     };
 
-    const renderLeads=()=>{
-      const leads=loadLeads();
-      leadsTableBody.innerHTML=leads.map(lead=>`<tr><td>${lead.type}</td><td>${lead.age} / ${lead.gender}</td><td>${formatCurrency(lead.coverage)}</td><td>${lead.reason}</td><td>${formatCurrency(lead.premium)}/mo</td></tr>`).join('');
-    };
-
     const setActiveTab=(type)=>{
       activeType=type;
       tabs.forEach(tab=>tab.classList.toggle('active', tab.dataset.type===type));
@@ -643,18 +617,7 @@ a.partner-card:hover{transform:translateY(-2px);border-color:rgba(212,175,55,0.3
 
     tabs.forEach(tab=>tab.addEventListener('click',()=>setActiveTab(tab.dataset.type)));
     getQuoteBtn.addEventListener('click',calculateQuote);
-    saveLeadBtn.addEventListener('click',()=>{
-      const premium=calculateQuote();
-      const leads=loadLeads();
-      leads.unshift({...getFormData(), premium});
-      saveLeads(leads);
-      renderLeads();
-      if(leadsPanel.hidden) leadsPanel.hidden=false;
-    });
-    toggleLeadsBtn.addEventListener('click',()=>{leadsPanel.hidden=!leadsPanel.hidden;toggleLeadsBtn.textContent=leadsPanel.hidden?'Show leads':'Hide leads';});
-    clearLeadsBtn.addEventListener('click',()=>{saveLeads([]);renderLeads();});
 
-    renderLeads();
     setActiveTab('term');
   });
 </script>
