@@ -164,10 +164,10 @@ img{display:block;max-width:100%;}
 .form-group select{background:#1e2630;color:var(--white-head);border:1px solid var(--onyx);padding:14px 16px;font:inherit;border-radius:8px;} 
 .form-span-2{grid-column:span 2;} 
 .quote-actions{display:flex;flex-wrap:wrap;gap:12px;} 
-.quote-result-panel{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;} 
-.quote-result{background:#1d2530;border:1px solid rgba(255,255,255,0.08);padding:24px;display:flex;flex-direction:column;gap:10px;box-shadow:0 12px 28px rgba(0,0,0,0.18);border-radius:16px;} 
+.quote-result-panel{display:grid;grid-template-columns:minmax(260px,340px) minmax(0,1fr);gap:18px;align-items:start;} 
+.quote-result{background:#1d2530;border:1px solid rgba(255,255,255,0.08);padding:18px 20px;display:flex;flex-direction:column;gap:8px;box-shadow:0 12px 28px rgba(0,0,0,0.18);border-radius:16px;} 
 .quote-result .k{font-family:'Spline Sans Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--steel-chrome);} 
-.quote-result .num{font-family:'Fraunces',serif;font-size:2rem;color:var(--white-head);} 
+.quote-result .num{font-family:'Fraunces',serif;font-size:1.72rem;color:var(--white-head);} 
 .quote-result .quote-actions{margin-top:8px;} 
 .quote-summary{display:flex;flex-direction:column;gap:8px;font-size:.95rem;color:var(--steel-chrome);} 
 .quote-summary span{display:block;} 
@@ -238,8 +238,8 @@ footer{background:#1d252d;border-top:2px solid var(--victory-gold);}
 .rv.in{opacity:1;transform:translateY(0);} 
 
 /* RESPONSIVE */
-@media(max-width:980px){ .nav-links li.lk{display:none;} .about-grid{grid-template-columns:1fr;} .pgrid{grid-template-columns:1fr 1fr;} .why-grid{grid-template-columns:1fr;} .luis-grid{grid-template-columns:1fr;} .luis-photo{max-width:380px;} .cgrid{grid-template-columns:1fr 1fr;} .quote-grid{grid-template-columns:1fr;} .foot-top{grid-template-columns:1fr 1fr;} .foot-brand{grid-column:span 2;}} 
-@media(max-width:600px){ .wrap,.nav-in,.hero-in,.foot-in{padding-left:22px;padding-right:22px;} .nav-btn{padding:11px 15px;font-size:.76rem;} .stats-in{grid-template-columns:1fr;padding-left:22px;padding-right:22px;} .stat{border-left:none;border-top:1px solid var(--onyx);} .pgrid{grid-template-columns:1fr;} .cgrid{grid-template-columns:1fr;} .quote-card{padding:24px;} .foot-top{grid-template-columns:1fr;} .foot-brand{grid-column:span 1;} .foot-bottom{flex-direction:column;}} 
+@media(max-width:980px){ .nav-links li.lk{display:none;} .about-grid{grid-template-columns:1fr;} .pgrid{grid-template-columns:1fr 1fr;} .why-grid{grid-template-columns:1fr;} .luis-grid{grid-template-columns:1fr;} .luis-photo{max-width:380px;} .cgrid{grid-template-columns:1fr 1fr;} .quote-grid{grid-template-columns:1fr;} .quote-result-panel{grid-template-columns:1fr;} .foot-top{grid-template-columns:1fr 1fr;} .foot-brand{grid-column:span 2;}} 
+@media(max-width:600px){ .wrap,.nav-in,.hero-in,.foot-in{padding-left:22px;padding-right:22px;} .nav-btn{padding:11px 15px;font-size:.76rem;} .stats-in{grid-template-columns:1fr;padding-left:22px;padding-right:22px;} .stat{border-left:none;border-top:1px solid var(--onyx);} .pgrid{grid-template-columns:1fr;} .cgrid{grid-template-columns:1fr;} .quote-card{padding:24px;} .quote-result{max-width:none;} .foot-top{grid-template-columns:1fr;} .foot-brand{grid-column:span 1;} .foot-bottom{flex-direction:column;}} 
 </style>
 </head>
 <body>
@@ -281,6 +281,49 @@ footer{background:#1d252d;border-top:2px solid var(--victory-gold);}
     </div>
   </div>
 </header>
+
+<section class="sec luis on-em" id="luis">
+  <div class="wrap">
+    <div class="luis-grid">
+      <div class="rv">
+        <div class="image-story-grid" style="grid-template-columns:1fr 1fr;gap:14px;align-items:start;">
+          <div class="image-card image-card-large">
+            <img src="B0A1A421-CE8E-4565-BF6C-7AF8B5351BFF.jpeg" alt="Luis Hernandez, Experior Financial Group">
+          </div>
+          <div class="image-stack" style="display:grid;gap:14px;grid-template-columns:1fr 1fr;">
+            <div class="image-card">
+              <img src="9113F56E-5A73-4B76-918B-FF284E8E6E3A_1_105_c.jpeg" alt="Client-focused conversation">
+            </div>
+            <div class="image-card">
+              <img src="B0B9CCC1-5B5B-41E2-BEBB-600C7CED3D8E_1_105_c.jpeg" alt="A polished professional setting">
+            </div>
+            <div class="image-card crop">
+              <img src="73B178F2-BF9B-4DB4-940F-FDE9E2771477_1_102_o.jpeg" alt="A calm professional moment">
+            </div>
+            <div class="image-card">
+              <img src="9FA14ACF-9237-4312-8680-26225CC66375.jpeg" alt="Financial planning conversation">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rv">
+        <span class="eyebrow">Your Partner Luis</span>
+        <h2 class="luis-name" style="margin-top:22px;">Luis <em>Hernandez.</em></h2>
+        <p class="luis-bio">I’m a licensed financial professional with Experior Financial Group, based in San Antonio, Texas. I work with clients and referral partners who want practical guidance, thoughtful planning, and a steady point of contact.</p>
+        <p class="luis-bio">As a 12-year Army veteran with five combat tours, I bring discipline, focus, and a mission-first commitment to every financial plan. I treat your family, business, and referral relationships with the same respect and reliability I brought to service.</p>
+        <p class="luis-bio">Whether you’re evaluating protection for your family, planning for a business transition, or looking for a trusted partner to collaborate with, I’d be glad to connect.</p>
+        <div class="luis-contacts">
+          <a class="lc" href="https://docs.google.com/forms/d/e/1FAIpQLSdfvr2W4Eg33lyhfXd9vJL7_Bm6iysYSS-93VV3ZzYoHyNUog/viewform" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/></svg><span>Join the team</span><span class="arr" style="margin-left:auto;font-family:'Spline Sans Mono',monospace;font-size:.8rem;opacity:.5;">↗</span></a>
+          <a class="lc" href="https://www.instagram.com/luis_hernandezsatx" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>Follow on Instagram</span><span class="arr" style="margin-left:auto;font-family:'Spline Sans Mono',monospace;font-size:.8rem;opacity:.5;">↗</span></a>
+          <a class="lc" href="tel:2104395309" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><path d="M5 5h4l2 4-2 2a15 15 0 006 6l2-2 4 2v4a2 2 0 01-2 2h-1C8 21 3 16 3 9V8a2 2 0 012-2h1z"/></svg><span>210-439-5309</span></a>
+        </div>
+        <div class="luis-cta" style="margin-top:26px;">
+          <a class="btn btn-brass" href="https://calendly.com/lhernandez55-inc/welcome-to-experior" target="_blank" rel="noopener">Book a Call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="sec about" id="about">
   <div class="wrap">
@@ -537,50 +580,6 @@ footer{background:#1d252d;border-top:2px solid var(--victory-gold);}
     </div>
   </div>
 </section>
-
-<section class="sec luis on-em" id="luis">
-  <div class="wrap">
-    <div class="luis-grid">
-      <div class="rv">
-        <div class="image-story-grid" style="grid-template-columns:1fr 1fr;gap:14px;align-items:start;">
-          <div class="image-card image-card-large">
-            <img src="B0A1A421-CE8E-4565-BF6C-7AF8B5351BFF.jpeg" alt="Luis Hernandez, Experior Financial Group">
-          </div>
-          <div class="image-stack" style="display:grid;gap:14px;grid-template-columns:1fr 1fr;">
-            <div class="image-card">
-              <img src="9113F56E-5A73-4B76-918B-FF284E8E6E3A_1_105_c.jpeg" alt="Client-focused conversation">
-            </div>
-            <div class="image-card">
-              <img src="B0B9CCC1-5B5B-41E2-BEBB-600C7CED3D8E_1_105_c.jpeg" alt="A polished professional setting">
-            </div>
-            <div class="image-card crop">
-              <img src="73B178F2-BF9B-4DB4-940F-FDE9E2771477_1_102_o.jpeg" alt="A calm professional moment">
-            </div>
-            <div class="image-card">
-              <img src="9FA14ACF-9237-4312-8680-26225CC66375.jpeg" alt="Financial planning conversation">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="rv">
-        <span class="eyebrow">Your Partner</span>
-        <h2 class="luis-name" style="margin-top:22px;">Luis <em>Hernandez.</em></h2>
-        <p class="luis-bio">I’m a licensed financial professional with Experior Financial Group, based in San Antonio, Texas. I work with clients and referral partners who want practical guidance, thoughtful planning, and a steady point of contact.</p>
-        <p class="luis-bio">As a 12-year Army veteran with five combat tours, I bring discipline, focus, and a mission-first commitment to every financial plan. I treat your family, business, and referral relationships with the same respect and reliability I brought to service.</p>
-        <p class="luis-bio">Whether you’re evaluating protection for your family, planning for a business transition, or looking for a trusted partner to collaborate with, I’d be glad to connect.</p>
-        <div class="luis-contacts">
-          <a class="lc" href="https://docs.google.com/forms/d/e/1FAIpQLSdfvr2W4Eg33lyhfXd9vJL7_Bm6iysYSS-93VV3ZzYoHyNUog/viewform" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/></svg><span>Join the team</span><span class="arr" style="margin-left:auto;font-family:'Spline Sans Mono',monospace;font-size:.8rem;opacity:.5;">↗</span></a>
-          <a class="lc" href="https://www.instagram.com/luis_hernandezsatx" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span>Follow on Instagram</span><span class="arr" style="margin-left:auto;font-family:'Spline Sans Mono',monospace;font-size:.8rem;opacity:.5;">↗</span></a>
-          <a class="lc" href="tel:2104395309" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><path d="M5 5h4l2 4-2 2a15 15 0 006 6l2-2 4 2v4a2 2 0 01-2 2h-1C8 21 3 16 3 9V8a2 2 0 012-2h1z"/></svg><span>210-439-5309</span></a>
-        </div>
-        <div class="luis-cta" style="margin-top:26px;">
-          <a class="btn btn-brass" href="https://calendly.com/lhernandez55-inc/welcome-to-experior" target="_blank" rel="noopener">Book a Call</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 <footer>
   <div class="foot-in">
